@@ -1,6 +1,23 @@
-# Physics-aware Multitask Learning for Parametric PDEs
+<h1 align="center">Physics-aware Multitask Learning for Parametric PDEs</h1>
 
-Official implementation of the multitask Physics-Informed Neural Network (PINN) architecture described in:
+<p align="center">
+  <a href="logo.svg">
+    <img
+      src="logo.svg"
+      alt="Multi-head PINN: shared backbone, task heads h₁–h₄, voter network, and μ-axis with interpolation (green) vs extrapolation (red)"
+      width="640"
+    />
+  </a>
+</p>
+
+<p align="center">
+  <strong>Architecture (top):</strong> inputs <code>(x, t, μ)</code> → shared backbone → task heads → voter (attention) → solution <code>u(x,t;μ)</code>, with physics residuals in the loss.<br/>
+  <strong>Generalization (bottom):</strong> training tasks at discrete <code>μ₁…μ₄</code>; strong performance when querying <em>inside</em> the training range (interpolation), limited accuracy <em>outside</em> it (extrapolation).
+</p>
+
+---
+
+Official PyTorch implementation of the multitask Physics-Informed Neural Network (PINN) described in:
 
 > **Physics-aware Multitask Learning for Solving Parametric Partial Differential Equations**  
 > Jon Ander Rivera, Javier Del Ser
@@ -27,6 +44,8 @@ Two training strategies from the paper are supported:
 │   └── lambda_x2/         # λx² elliptic benchmark
 ├── outputs/               # Checkpoints and loss logs (created at runtime)
 ├── paper/                 # Manuscript PDF
+├── logo.svg               # Repository logo
+├── logo-icon.svg          # Compact icon (128×128)
 ├── requirements.txt
 ├── CITATION.bib
 └── README.md
