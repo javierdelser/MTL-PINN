@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "physics-aware-mtl-pinn"
+version = "0.1.0"
+description = "Physics-aware multitask PINNs for parametric PDEs (Rivera & Del Ser)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Jon Ander Rivera" },
+  { name = "Javier Del Ser" },
+]
+dependencies = [
+  "numpy>=1.24",
+  "matplotlib>=3.7",
+  "scipy>=1.10",
+  "torch>=2.0",
+]
+
+[project.urls]
+Repository = "https://github.com/YOUR_USERNAME/physics-aware-mtl-pinn"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mtl_pinn*"]
