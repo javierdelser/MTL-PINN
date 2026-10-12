@@ -4,7 +4,7 @@
     <img
       src="logo.svg"
       alt="Multi-head PINN: shared backbone, task heads, pairwise voter, and parameter axis with interpolation versus extrapolation"
-      width="640"
+      width="800"
     />
   </a>
 </p>
