@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+poisson,baseline,True,False,False,50,21.413086,20000,178.24664,0.0089123322,9937,9937,155664,outputs/comparison/poisson/baseline/pinn/seed50

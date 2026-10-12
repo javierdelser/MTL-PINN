@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+poisson,one-phase,False,False,False,50,22.772461,20000,285.9144,0.01429572,9893,9893,207872,outputs/comparison/poisson/mtl/one-phase/nosoftmax/muvoter/seed50

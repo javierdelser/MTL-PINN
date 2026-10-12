@@ -1,0 +1,16 @@
+{
+  "pde": "poisson",
+  "mode": "baseline",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": false,
+  "seed": 50,
+  "peak_memory_mb": 21.4130859375,
+  "n_epochs": 20000,
+  "total_train_time_s": 178.24664411287085,
+  "time_per_epoch_s": 0.008912332205643542,
+  "n_parameters": 9937,
+  "n_trainable_parameters": 9937,
+  "flops_per_forward": 155664,
+  "output_dir": "outputs/comparison/poisson/baseline/pinn/seed50"
+}

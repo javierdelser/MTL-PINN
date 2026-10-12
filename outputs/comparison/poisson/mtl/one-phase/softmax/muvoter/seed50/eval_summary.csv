@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,mean_test_time_per_point_s,n_eval_queries
+poisson,one-phase,True,False,False,50,5.4369675e-06,6

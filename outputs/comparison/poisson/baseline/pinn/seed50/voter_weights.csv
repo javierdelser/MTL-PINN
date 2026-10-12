@@ -1,0 +1,7 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,mu,split,t,has_voter
+poisson,baseline,True,False,False,50,0.5,train,,0
+poisson,baseline,True,False,False,50,1.5,train,,0
+poisson,baseline,True,False,False,50,2.5,train,,0
+poisson,baseline,True,False,False,50,3.5,train,,0
+poisson,baseline,True,False,False,50,2,interpolation,,0
+poisson,baseline,True,False,False,50,8,extrapolation,,0

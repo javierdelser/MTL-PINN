@@ -1,0 +1,16 @@
+{
+  "pde": "poisson",
+  "mode": "one-phase",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": false,
+  "seed": 50,
+  "peak_memory_mb": 22.7939453125,
+  "n_epochs": 20000,
+  "total_train_time_s": 293.35881333403086,
+  "time_per_epoch_s": 0.014667940666701542,
+  "n_parameters": 9893,
+  "n_trainable_parameters": 9893,
+  "flops_per_forward": 207872,
+  "output_dir": "outputs/comparison/poisson/mtl/one-phase/softmax/muvoter/seed50"
+}
