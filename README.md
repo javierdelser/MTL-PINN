@@ -4,171 +4,131 @@
   <a href="logo.svg">
     <img
       src="logo.svg"
-      alt="Multi-head PINN: shared backbone, task heads h₁–h₄, voter network, and μ-axis with interpolation (green) vs extrapolation (red)"
+      alt="Multi-head PINN: shared backbone, task heads, pairwise voter, and parameter axis with interpolation versus extrapolation"
       width="640"
     />
   </a>
 </p>
 
-<p align="center">
-  <strong>Architecture (top):</strong> inputs <code>(x, t, μ)</code> → shared backbone → task heads → voter (attention) → solution <code>u(x,t;μ)</code>, with physics residuals in the loss.<br/>
-  <strong>Generalization (bottom):</strong> training tasks at discrete <code>μ₁…μ₄</code>; strong performance when querying <em>inside</em> the training range (interpolation), limited accuracy <em>outside</em> it (extrapolation).
-</p>
-
----
-
-Official PyTorch implementation of the multitask Physics-Informed Neural Network (PINN) described in:
+Official PyTorch implementation of the multitask Physics-Informed Neural Network (MTL-PINN) in:
 
 > **Physics-aware Multitask Learning for Solving Parametric Partial Differential Equations**  
 > Jon Ander Rivera, Javier Del Ser
 
-The code trains multi-head PINNs with a **voter network** (attention over heads) for three parametric benchmarks:
+A shared backbone reads only the coordinates \((\mathbf{x}, t)\). One linear head is learned for each training parameter. A voter network, evaluated once per head on the pair \((\boldsymbol{\mu}, \boldsymbol{\mu}_\ell)\), mixes the heads. With a softmax, the prediction lies in the convex hull of the head outputs. Without it, the raw scores are the weights, so the prediction can be any point in their linear span.
 
-| Benchmark | PDE / problem | Parameter |
-|-----------|----------------|-----------|
-| `lambda_x2` | \(-u_{xx} + 2\lambda = 0\), \(u(x;\lambda)=\lambda x^2\) | \(\lambda\) |
-| `heat` | \(u_t = p\, u_{xx}\), \(u(x,0)=\sin(\pi x)\) | \(p\) |
-| `burgers` | \(u_t + u u_x - \nu u_{xx} = 0\) | \(\nu\) (viscosity) |
+| PDE | Equation | Parameter | Training values |
+|-----|----------|-----------|-----------------|
+| Poisson | \(-u_{xx}+2\lambda=0\), \(u=\lambda x^2\) | \(\lambda\) | \(\{0.5, 1.5, 2.5, 3.5\}\) |
+| Heat | \(u_t=\rho\, u_{xx}\) | \(\rho\) | \(\{0.05, 0.1, 0.2, 0.3\}\) |
+| Burgers | \(u_t+u u_x-\nu u_{xx}=0\) | \(\nu\) | \(\{0.005, 0.01, 0.02, 0.03\}\) |
+| Fisher–KPP | \(u_t=\Delta u+r u(1-u)\), \(D=1\) | \(r\) | \(\{0.5, 1.0, 1.5, 2.0\}\) |
+| Lamb–Chaplygin | 2-D Euler, stream function and vorticity | \((a, U)\) | corners of \([0.8,1.2]\times[0.5,1.0]\) |
 
-Two training strategies from the paper are supported:
+## Model variants
 
-- **One-phase**: shared backbone, all heads, and voter network trained jointly.
-- **Two-phase**: specialize heads on discrete training parameters, then train only the voter network.
+Four MTL-PINN variants combine the two training strategies with the two voter normalizations.
+
+- **Two-phase.** For 16,667 epochs the voter is frozen. Each epoch updates the shared backbone from the mean of the per-task losses, then updates each head on its own training parameter. For the remaining 3,333 epochs the backbone and the heads are frozen and only the voter is trained on the mixed prediction.
+- **One-phase.** Backbone, heads, and voter are trained jointly for 20,000 epochs. Heads are not tied to a training solution.
+- **Softmax / no softmax.** The same two schedules are run with softmax weights and with raw voter scores.
+
+The baseline is a fully connected tanh PINN of the same depth as the backbone. Its input is the coordinates concatenated with the parameter, and its width is chosen so that the parameter count matches the MTL-PINN. It is trained for 20,000 epochs on the same tasks, collocation budget, and optimizer.
+
+Hybrid models start from the trained two-phase softmax checkpoint and add one numerical solution as an extra head, either at the interpolation query or at the extrapolation query. The numerical field has no weights. It is stored on a grid and read by multilinear interpolation. The loss is the physics loss at the four training parameters plus a data term of weight \(\gamma_s=10\) at the numerical head. That data term is applied only while the voter is being updated. Four retraining modes are stored:
+
+| Mode | What is trained |
+|------|-----------------|---------------------------|
+| `only-voter` | voter |
+| `backbone-frozen-retrain-rest` | heads and voter |
+| `one-phase` | backbone, heads, and voter |
+| `two-phase` | heads, then voter |
+
+## Architecture
+
+| PDE | Backbone | Heads | Voter | Points per task and epoch | Parameters |
+|-----|----------|-------|-------|---------------------------|------------|
+| Poisson | 3 × 64 | 4, one field | 2 × 32 on \((\lambda,\lambda_\ell)\) | 300 | 9,893 |
+| Heat | 5 × 128 | 4, one field | 2 × 64 | 700 | 71,365 |
+| Burgers | 5 × 128 | 4, one field | 2 × 64 | 700 | 71,365 |
+| Fisher–KPP | 5 × 128 | 4, one field | 2 × 64 | 800 | 71,493 |
+| Lamb–Chaplygin | 5 × 128 | 4, \((\psi,\omega)\) | 2 × 64 on \((a,U,a_\ell,U_\ell)\) | 900 | 72,137 |
 
 ## Repository layout
 
 ```
-├── mtl_pinn/              # Python package
-│   ├── heat/              # Heat equation
-│   ├── burgers/           # Burgers equation
-│   └── lambda_x2/         # λx² elliptic benchmark
-├── outputs/               # Checkpoints and loss logs (created at runtime)
-├── paper/                 # Manuscript PDF
-├── logo.svg               # Repository logo
-├── logo-icon.svg          # Compact icon (128×128)
+├── mtl_final/                 # Models, PDEs, training, evaluation, FLOPs
+├── scripts/                   # Experiment launchers and figure scripts
+├── outputs/
+│   ├── comparison/            # Seed-50 MTL variants and the matched PINN
+│   ├── hybrid/                # Numerical-head retraining
+│   └── generalization/        # MAE along the query parameter (curves.csv)
+├── tests/
+├── logo.svg
 ├── requirements.txt
-├── CITATION.bib
 └── README.md
 ```
 
-## Requirements
-
-- Python 3.10+
-- PyTorch, NumPy, SciPy, Matplotlib (see `requirements.txt`)
+Each run directory contains `model.pth`, `losses.csv`, `train_metrics.csv`, `evaluation.csv`, `voter_weights.csv`, and the predicted fields under `fields/`.
 
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/physics-aware-mtl-pinn.git
-cd physics-aware-mtl-pinn
+git clone https://github.com/javierdelser/MTL-PINN.git
+cd MTL-PINN
 
 python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 
 pip install -r requirements.txt
 pip install -e .
 ```
 
-Use a CUDA-enabled PyTorch build if you want GPU training (`--device cuda`).
+Use a CUDA build of PyTorch for GPU training (`--device cuda`).
 
-## Quick start
-
-Each benchmark is run as a module. **Prediction** expects checkpoints from **both** strategies in the same `--output-dir`.
-
-### 1. λx² benchmark (fastest)
+## Reproduce the stored runs
 
 ```bash
-# Train one-phase and two-phase models (~30k + 5k voter iterations for two-phase)
-python -m mtl_pinn.lambda_x2 train --strategy one-phase --device auto
-python -m mtl_pinn.lambda_x2 train --strategy two-phase --device auto
-
-# Compare strategies at λ = 2 and λ = 8 (interpolation)
-python -m mtl_pinn.lambda_x2 predict --params 2 8 --save-figure outputs/lambda_x2/comparison.png
+python -m mtl_final compare --epochs 20000 --seed 50 --device cuda
+python -m mtl_final hybrid --epochs 20000 --seed 50 --device cuda
 ```
 
-Training tasks: \(\lambda \in \{0.5, 1.5, 2.5, 3.5\}\).
-
-### 2. Heat equation
+One configuration:
 
 ```bash
-python -m mtl_pinn.heat train --strategy one-phase
-python -m mtl_pinn.heat train --strategy two-phase
-
-python -m mtl_pinn.heat predict --params 0.15 0.8 --save-figure outputs/heat/comparison.png
+python -m mtl_final train --pde heat --mode two-phase --softmax --seed 50 --device cuda
+python -m mtl_final train --pde burgers --mode one-phase --nosoftmax --seed 50 --device cuda
 ```
 
-Training tasks: \(p \in \{0.05, 0.1, 0.2, 0.3\}\). Default training: 50k head iterations + 10k voter iterations (two-phase).
-
-### 3. Burgers equation
+Smoke test, a few epochs on every PDE:
 
 ```bash
-python -m mtl_pinn.burgers train --strategy one-phase
-python -m mtl_pinn.burgers train --strategy two-phase
-
-python -m mtl_pinn.burgers predict --params 0.015 0.08 --save-figure outputs/burgers/comparison.png
+python -m mtl_final smoke --device cpu
 ```
 
-Training tasks: \(\nu \in \{0.005, 0.01, 0.02, 0.03\}\). Default training: 100k + 20k voter iterations (two-phase).
+## Figures
 
-## CLI reference
-
-Common options (all benchmarks):
-
-| Option | Description |
-|--------|-------------|
-| `train` / `predict` | Command |
-| `--strategy {one-phase,two-phase}` | Training strategy (train only) |
-| `--output-dir PATH` | Defaults to `outputs/<benchmark>/` |
-| `--device {auto,cpu,cuda}` | Compute device |
-| `--seed INT` | Random seed (default: 50) |
-| `--head-epochs INT` | Head / joint training iterations |
-| `--attn-epochs INT` | Voter-only iterations (two-phase only) |
-| `--params FLOAT ...` | Parameter values for `predict` |
-| `--save-figure PATH` | Save comparison figure (non-interactive backend) |
-| `--show` | Open an interactive matplotlib window |
-
-Example: shorter smoke test on heat
+The figure scripts read the stored checkpoints and `outputs/generalization/curves.csv`. They do not retrain.
 
 ```bash
-python -m mtl_pinn.heat train --strategy two-phase --head-epochs 500 --attn-epochs 100
+python scripts/plot_generalization.py
+python scripts/make_paper_figures.py --all
+python scripts/plot_phase_heads.py
+python scripts/plot_hybrid_heads.py
+python scripts/show_comparison.py
 ```
 
-## Outputs
-
-After training, each strategy writes:
-
-- `model_one_phase.pth` or `model_two_phase.pth` — full model (torch.save)
-- `backbone_*.pth` — shared layer weights
-- `loss_*.txt` — loss traces
-
-## Reproducing paper figures
-
-The `predict` command regenerates the side-by-side contour plots comparing one-phase vs two-phase models at user-specified parameter values (interpolation). Use `--show` for interactive Qt windows on a desktop, or `--save-figure` for headless servers.
-
-Additional plotting utilities (head grids, analytical baselines, loss curves) live in `mtl_pinn/<benchmark>/core.py` and can be called from a short script after loading checkpoints with `load_models()`.
+`make_paper_figures.py` writes the solution panels, generalization and hybrid curves, learned-head grids, query fields, and voter-weight bars to `outputs/paper_figures/`. A subset is `python scripts/make_paper_figures.py --fig f3 weights`.
 
 ## Citation
-
-If you use this code, please cite:
 
 ```bibtex
 @article{rivera2026physicsawaremtl,
   title   = {Physics-aware Multitask Learning for Solving Parametric Partial Differential Equations},
   author  = {Rivera, Jon Ander and Del Ser, Javier},
-  journal = {Preprint},
+  journal = {Computer Methods in Applied Mechanics and Engineering},
   year    = {2026},
-  note    = {Submitted to Elsevier. Corresponding author: jonander.rivera@ehu.eus},
+  note    = {Under second review. Corresponding author: jonander.rivera@ehu.eus},
   keywords = {Multitask Learning, Physics-Informed Neural Networks, Parametric Partial Differential Equations}
 }
 ```
-
-The same entry is in [`CITATION.bib`](CITATION.bib). Update the `journal`, `volume`, `pages`, and `doi` fields when the article is published.
-
-## Authors
-
-- **Jon Ander Rivera** — Department of Applied Mathematics, University of the Basque Country (UPV/EHU)
-- **Javier Del Ser** — TECNALIA / Department of Mathematics, UPV/EHU
-
-## License
-
-MIT License (see `pyproject.toml`). Replace or extend as needed before publication.
