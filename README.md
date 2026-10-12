@@ -1,4 +1,5 @@
-<h1 align="center">Physics-aware Multitask Learning for Parametric PDEs</h1>
+<h1 align="center">Physics-aware Multitask Learning</h1>
+<h1 align="center">for Parametric PDEs</h1>
 
 <p align="center">
   <a href="logo.svg">
