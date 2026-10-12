@@ -1,0 +1,16 @@
+{
+  "pde": "burgers",
+  "mode": "two-phase",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": false,
+  "seed": 50,
+  "peak_memory_mb": 101.681640625,
+  "n_epochs": 20000,
+  "total_train_time_s": 406.9394571265584,
+  "time_per_epoch_s": 0.02034697285632792,
+  "n_parameters": 71365,
+  "n_trainable_parameters": 4417,
+  "flops_per_forward": 1335296,
+  "output_dir": "outputs/comparison/burgers/mtl/two-phase/softmax/muvoter/seed50"
+}

@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,mean_test_time_per_point_s,n_eval_queries
+burgers,two-phase,True,False,False,50,2.9619318e-07,6

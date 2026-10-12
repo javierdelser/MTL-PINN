@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+burgers,baseline,True,False,False,50,64.973145,20000,289.11212,0.014455606,70885,70885,1123584,outputs/comparison/burgers/baseline/pinn/seed50

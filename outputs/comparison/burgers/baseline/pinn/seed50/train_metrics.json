@@ -1,0 +1,16 @@
+{
+  "pde": "burgers",
+  "mode": "baseline",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": false,
+  "seed": 50,
+  "peak_memory_mb": 64.97314453125,
+  "n_epochs": 20000,
+  "total_train_time_s": 289.1121155351357,
+  "time_per_epoch_s": 0.014455605776756784,
+  "n_parameters": 70885,
+  "n_trainable_parameters": 70885,
+  "flops_per_forward": 1123584,
+  "output_dir": "outputs/comparison/burgers/baseline/pinn/seed50"
+}
