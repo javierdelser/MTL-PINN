@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+poisson,backbone-frozen-retrain-rest,True,False,True,extrapolation,8,50,23.102051,20000,375.49283,0.018774641,9893,1445,225792,outputs/hybrid/poisson/hybrid/extrap/backbone-frozen-retrain-rest/softmax/muvoter/seed50

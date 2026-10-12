@@ -1,0 +1,18 @@
+{
+  "pde": "poisson",
+  "mode": "two-phase",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "interpolation",
+  "snapshot_mu": "2",
+  "seed": 50,
+  "peak_memory_mb": 24.1787109375,
+  "n_epochs": 20000,
+  "total_train_time_s": 287.45635660558764,
+  "time_per_epoch_s": 0.014372817830279383,
+  "n_parameters": 9893,
+  "n_trainable_parameters": 1185,
+  "flops_per_forward": 225792,
+  "output_dir": "outputs/hybrid/poisson/hybrid/interp/two-phase/softmax/muvoter/seed50"
+}

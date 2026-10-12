@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,mean_test_time_per_point_s,n_eval_queries
+fisher_kpp,only-voter,True,False,True,extrapolation,3.5,50,4.9826165e-07,6

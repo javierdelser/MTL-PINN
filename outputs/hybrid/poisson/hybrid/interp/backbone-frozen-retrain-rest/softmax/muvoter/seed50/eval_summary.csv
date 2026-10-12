@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,mean_test_time_per_point_s,n_eval_queries
+poisson,backbone-frozen-retrain-rest,True,False,True,interpolation,2,50,8.8343821e-06,6

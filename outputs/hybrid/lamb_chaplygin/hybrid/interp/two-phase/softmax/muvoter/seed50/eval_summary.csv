@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,mean_test_time_per_point_s,n_eval_queries
+lamb_chaplygin,two-phase,True,False,True,interpolation,"1,0.75",50,5.7397829e-07,6

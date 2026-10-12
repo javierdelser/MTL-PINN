@@ -1,0 +1,18 @@
+{
+  "pde": "poisson",
+  "mode": "one-phase",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "extrapolation",
+  "snapshot_mu": "8",
+  "seed": 50,
+  "peak_memory_mb": 24.4951171875,
+  "n_epochs": 20000,
+  "total_train_time_s": 434.94766177584825,
+  "time_per_epoch_s": 0.021747383088792413,
+  "n_parameters": 9893,
+  "n_trainable_parameters": 9893,
+  "flops_per_forward": 225792,
+  "output_dir": "outputs/hybrid/poisson/hybrid/extrap/one-phase/softmax/muvoter/seed50"
+}

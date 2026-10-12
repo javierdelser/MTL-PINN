@@ -1,0 +1,18 @@
+{
+  "pde": "fisher_kpp",
+  "mode": "two-phase",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "interpolation",
+  "snapshot_mu": "1.25",
+  "seed": 50,
+  "peak_memory_mb": 155.57568359375,
+  "n_epochs": 20000,
+  "total_train_time_s": 616.031714080862,
+  "time_per_epoch_s": 0.0308015857040431,
+  "n_parameters": 71493,
+  "n_trainable_parameters": 4417,
+  "flops_per_forward": 1405952,
+  "output_dir": "outputs/hybrid/fisher_kpp/hybrid/interp/two-phase/softmax/muvoter/seed50"
+}

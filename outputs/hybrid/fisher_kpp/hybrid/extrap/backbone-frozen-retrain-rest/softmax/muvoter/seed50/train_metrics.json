@@ -1,0 +1,18 @@
+{
+  "pde": "fisher_kpp",
+  "mode": "backbone-frozen-retrain-rest",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "extrapolation",
+  "snapshot_mu": "3.5",
+  "seed": 50,
+  "peak_memory_mb": 82.39990234375,
+  "n_epochs": 20000,
+  "total_train_time_s": 652.7476477059836,
+  "time_per_epoch_s": 0.03263738238529918,
+  "n_parameters": 71493,
+  "n_trainable_parameters": 4933,
+  "flops_per_forward": 1405952,
+  "output_dir": "outputs/hybrid/fisher_kpp/hybrid/extrap/backbone-frozen-retrain-rest/softmax/muvoter/seed50"
+}

@@ -1,0 +1,18 @@
+{
+  "pde": "poisson",
+  "mode": "backbone-frozen-retrain-rest",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "extrapolation",
+  "snapshot_mu": "8",
+  "seed": 50,
+  "peak_memory_mb": 23.10205078125,
+  "n_epochs": 20000,
+  "total_train_time_s": 375.4928281334869,
+  "time_per_epoch_s": 0.018774641406674345,
+  "n_parameters": 9893,
+  "n_trainable_parameters": 1445,
+  "flops_per_forward": 225792,
+  "output_dir": "outputs/hybrid/poisson/hybrid/extrap/backbone-frozen-retrain-rest/softmax/muvoter/seed50"
+}

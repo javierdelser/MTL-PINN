@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+lamb_chaplygin,backbone-frozen-retrain-rest,True,False,True,extrapolation,"1.6,1.4",50,117.2998,20000,1541.9366,0.077096828,72137,5577,1424384,outputs/hybrid/lamb_chaplygin/hybrid/extrap/backbone-frozen-retrain-rest/softmax/muvoter/seed50

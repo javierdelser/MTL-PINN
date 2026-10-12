@@ -1,0 +1,18 @@
+{
+  "pde": "fisher_kpp",
+  "mode": "only-voter",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "extrapolation",
+  "snapshot_mu": "3.5",
+  "seed": 50,
+  "peak_memory_mb": 77.28271484375,
+  "n_epochs": 20000,
+  "total_train_time_s": 566.6408968590185,
+  "time_per_epoch_s": 0.02833204484295093,
+  "n_parameters": 71493,
+  "n_trainable_parameters": 4417,
+  "flops_per_forward": 1405952,
+  "output_dir": "outputs/hybrid/fisher_kpp/hybrid/extrap/only-voter/softmax/muvoter/seed50"
+}

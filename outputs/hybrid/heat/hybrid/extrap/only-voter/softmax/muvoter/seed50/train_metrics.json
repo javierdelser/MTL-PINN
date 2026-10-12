@@ -1,0 +1,18 @@
+{
+  "pde": "heat",
+  "mode": "only-voter",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "extrapolation",
+  "snapshot_mu": "0.8",
+  "seed": 50,
+  "peak_memory_mb": 57.45166015625,
+  "n_epochs": 20000,
+  "total_train_time_s": 445.75493286740675,
+  "time_per_epoch_s": 0.022287746643370337,
+  "n_parameters": 71365,
+  "n_trainable_parameters": 4417,
+  "flops_per_forward": 1403904,
+  "output_dir": "outputs/hybrid/heat/hybrid/extrap/only-voter/softmax/muvoter/seed50"
+}

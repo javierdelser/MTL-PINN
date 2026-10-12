@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+fisher_kpp,backbone-frozen-retrain-rest,True,False,True,interpolation,1.25,50,82.399902,20000,625.51151,0.031275575,71493,4933,1405952,outputs/hybrid/fisher_kpp/hybrid/interp/backbone-frozen-retrain-rest/softmax/muvoter/seed50

@@ -1,0 +1,18 @@
+{
+  "pde": "burgers",
+  "mode": "only-voter",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "extrapolation",
+  "snapshot_mu": "0.08",
+  "seed": 50,
+  "peak_memory_mb": 57.50634765625,
+  "n_epochs": 20000,
+  "total_train_time_s": 465.77196300026844,
+  "time_per_epoch_s": 0.023288598150013422,
+  "n_parameters": 71365,
+  "n_trainable_parameters": 4417,
+  "flops_per_forward": 1403904,
+  "output_dir": "outputs/hybrid/burgers/hybrid/extrap/only-voter/softmax/muvoter/seed50"
+}

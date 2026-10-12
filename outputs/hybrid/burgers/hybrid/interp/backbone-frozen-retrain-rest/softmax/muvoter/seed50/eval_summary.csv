@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,mean_test_time_per_point_s,n_eval_queries
+burgers,backbone-frozen-retrain-rest,True,False,True,interpolation,0.015,50,5.767834e-07,6

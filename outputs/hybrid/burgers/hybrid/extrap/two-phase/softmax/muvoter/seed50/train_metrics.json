@@ -1,0 +1,18 @@
+{
+  "pde": "burgers",
+  "mode": "two-phase",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "extrapolation",
+  "snapshot_mu": "0.08",
+  "seed": 50,
+  "peak_memory_mb": 101.94873046875,
+  "n_epochs": 20000,
+  "total_train_time_s": 472.9094813453703,
+  "time_per_epoch_s": 0.023645474067268513,
+  "n_parameters": 71365,
+  "n_trainable_parameters": 4417,
+  "flops_per_forward": 1403904,
+  "output_dir": "outputs/hybrid/burgers/hybrid/extrap/two-phase/softmax/muvoter/seed50"
+}

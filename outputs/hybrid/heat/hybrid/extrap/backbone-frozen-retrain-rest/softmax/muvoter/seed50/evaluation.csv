@@ -1,0 +1,7 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,mu,split,mae_u,mae_mean,test_time_per_query_s,test_time_per_point_s
+heat,backbone-frozen-retrain-rest,True,False,True,extrapolation,0.8,50,0.05,train,7.8997407e-05,7.8997407e-05,0.000461402,5.3589082e-07
+heat,backbone-frozen-retrain-rest,True,False,True,extrapolation,0.8,50,0.1,train,8.7881577e-05,8.7881577e-05,0.000462432,5.3708711e-07
+heat,backbone-frozen-retrain-rest,True,False,True,extrapolation,0.8,50,0.2,train,7.93617e-05,7.93617e-05,0.00046185001,5.3641116e-07
+heat,backbone-frozen-retrain-rest,True,False,True,extrapolation,0.8,50,0.3,train,0.00014996649,0.00014996649,0.00045797401,5.3190941e-07
+heat,backbone-frozen-retrain-rest,True,False,True,extrapolation,0.8,50,0.15,interpolation,0.026766609,0.026766609,0.00045494501,5.2839142e-07
+heat,backbone-frozen-retrain-rest,True,False,True,extrapolation,0.8,50,0.8,extrapolation,3.9945617e-06,3.9945617e-06,0.000458165,5.3213124e-07

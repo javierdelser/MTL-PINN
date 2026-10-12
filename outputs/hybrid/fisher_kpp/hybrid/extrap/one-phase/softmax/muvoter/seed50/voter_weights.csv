@@ -1,0 +1,7 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,mu,split,t,has_voter,w0,w1,w2,w3,w4,weights
+fisher_kpp,one-phase,True,False,True,extrapolation,3.5,50,0.5,train,1.5,1,0.99998868,1.129834e-05,4.063703e-10,2.5334966e-14,2.8411661e-26,"0.99998868,1.129834e-05,4.063703e-10,2.5334966e-14,2.8411661e-26"
+fisher_kpp,one-phase,True,False,True,extrapolation,3.5,50,1,train,1.5,1,5.248969e-05,0.99990547,4.2023759e-05,2.1679643e-09,1.4934408e-21,"5.248969e-05,0.99990547,4.2023759e-05,2.1679643e-09,1.4934408e-21"
+fisher_kpp,one-phase,True,False,True,extrapolation,3.5,50,1.5,train,1.5,1,2.1057085e-09,4.2024803e-05,0.99991131,4.6609854e-05,1.8882899e-17,"2.1057085e-09,4.2024803e-05,0.99991131,4.6609854e-05,1.8882899e-17"
+fisher_kpp,one-phase,True,False,True,extrapolation,3.5,50,2,train,1.5,1,4.3768952e-13,1.9031989e-09,4.8442609e-05,0.9999516,2.4424459e-13,"4.3768952e-13,1.9031989e-09,4.8442609e-05,0.9999516,2.4424459e-13"
+fisher_kpp,one-phase,True,False,True,extrapolation,3.5,50,1.25,interpolation,1.5,1,2.2022146e-05,0.5332647,0.46669132,2.1932965e-05,1.2076438e-17,"2.2022146e-05,0.5332647,0.46669132,2.1932965e-05,1.2076438e-17"
+fisher_kpp,one-phase,True,False,True,extrapolation,3.5,50,3.5,extrapolation,1.5,1,4.0899601e-22,1.3580465e-19,3.9310683e-16,2.5525951e-12,1,"4.0899601e-22,1.3580465e-19,3.9310683e-16,2.5525951e-12,1"

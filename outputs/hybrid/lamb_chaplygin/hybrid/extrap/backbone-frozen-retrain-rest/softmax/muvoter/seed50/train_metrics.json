@@ -1,0 +1,18 @@
+{
+  "pde": "lamb_chaplygin",
+  "mode": "backbone-frozen-retrain-rest",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "extrapolation",
+  "snapshot_mu": "1.6,1.4",
+  "seed": 50,
+  "peak_memory_mb": 117.2998046875,
+  "n_epochs": 20000,
+  "total_train_time_s": 1541.9365571420349,
+  "time_per_epoch_s": 0.07709682785710174,
+  "n_parameters": 72137,
+  "n_trainable_parameters": 5577,
+  "flops_per_forward": 1424384,
+  "output_dir": "outputs/hybrid/lamb_chaplygin/hybrid/extrap/backbone-frozen-retrain-rest/softmax/muvoter/seed50"
+}
