@@ -62,6 +62,7 @@ Hybrid models start from the trained two-phase softmax checkpoint and add one nu
 │   ├── comparison/            # Seed-50 MTL variants and the matched PINN
 │   ├── hybrid/                # Numerical-head retraining
 │   └── generalization/        # MAE along the query parameter (curves.csv)
+│   └── figures/               # Figures included in the current preprint
 ├── tests/
 ├── logo.svg
 ├── requirements.txt
