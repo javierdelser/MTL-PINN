@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+lamb_chaplygin,two-phase,True,False,True,interpolation,"1,0.75",50,268.05518,20000,1600.3193,0.080015965,72137,4545,1424384,outputs/hybrid/lamb_chaplygin/hybrid/interp/two-phase/softmax/muvoter/seed50

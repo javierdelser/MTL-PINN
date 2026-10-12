@@ -1,0 +1,7 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,mu,split,t,has_voter,w0,w1,w2,w3,w4,weights
+poisson,backbone-frozen-retrain-rest,True,False,True,extrapolation,8,50,0.5,train,,1,0.9999584,4.1374034e-05,2.8246168e-07,3.1410512e-09,5.2748551e-18,"0.9999584,4.1374034e-05,2.8246168e-07,3.1410512e-09,5.2748551e-18"
+poisson,backbone-frozen-retrain-rest,True,False,True,extrapolation,8,50,1.5,train,,1,0.00020268695,0.99960071,0.00019608856,4.4570805e-07,1.5392951e-16,"0.00020268695,0.99960071,0.00019608856,4.4570805e-07,1.5392951e-16"
+poisson,backbone-frozen-retrain-rest,True,False,True,extrapolation,8,50,2.5,train,,1,2.6202954e-07,9.5665979e-05,0.99970382,0.00020026487,1.7395666e-15,"2.6202954e-07,9.5665979e-05,0.99970382,0.00020026487,1.7395666e-15"
+poisson,backbone-frozen-retrain-rest,True,False,True,extrapolation,8,50,3.5,train,,1,1.2930322e-09,4.9303853e-08,0.00010074234,0.99989927,4.6442272e-13,"1.2930322e-09,4.9303853e-08,0.00010074234,0.99989927,4.6442272e-13"
+poisson,backbone-frozen-retrain-rest,True,False,True,extrapolation,8,50,2,interpolation,,1,0.00017904796,0.54306626,0.45649952,0.00025510695,1.1681442e-14,"0.00017904796,0.54306626,0.45649952,0.00025510695,1.1681442e-14"
+poisson,backbone-frozen-retrain-rest,True,False,True,extrapolation,8,50,8,extrapolation,,1,4.5251061e-20,8.3067716e-19,2.5358712e-17,1.4450075e-15,1,"4.5251061e-20,8.3067716e-19,2.5358712e-17,1.4450075e-15,1"

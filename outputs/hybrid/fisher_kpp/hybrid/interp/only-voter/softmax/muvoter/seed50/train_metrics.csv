@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+fisher_kpp,only-voter,True,False,True,interpolation,1.25,50,77.282715,20000,557.20694,0.027860347,71493,4417,1405952,outputs/hybrid/fisher_kpp/hybrid/interp/only-voter/softmax/muvoter/seed50

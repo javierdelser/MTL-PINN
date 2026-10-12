@@ -1,0 +1,18 @@
+{
+  "pde": "burgers",
+  "mode": "backbone-frozen-retrain-rest",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "extrapolation",
+  "snapshot_mu": "0.08",
+  "seed": 50,
+  "peak_memory_mb": 62.39697265625,
+  "n_epochs": 20000,
+  "total_train_time_s": 525.615481334622,
+  "time_per_epoch_s": 0.0262807740667311,
+  "n_parameters": 71365,
+  "n_trainable_parameters": 4933,
+  "flops_per_forward": 1403904,
+  "output_dir": "outputs/hybrid/burgers/hybrid/extrap/backbone-frozen-retrain-rest/softmax/muvoter/seed50"
+}

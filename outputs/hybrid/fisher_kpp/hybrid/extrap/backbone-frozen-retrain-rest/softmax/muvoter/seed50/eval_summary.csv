@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,mean_test_time_per_point_s,n_eval_queries
+fisher_kpp,backbone-frozen-retrain-rest,True,False,True,extrapolation,3.5,50,4.5322169e-07,6

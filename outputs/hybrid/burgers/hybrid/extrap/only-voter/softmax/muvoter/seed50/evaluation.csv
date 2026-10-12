@@ -1,0 +1,7 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,mu,split,mae_u,mae_mean,test_time_per_query_s,test_time_per_point_s
+burgers,only-voter,True,False,True,extrapolation,0.08,50,0.005,train,0.010917148,0.010917148,0.000479429,5.5682811e-07
+burgers,only-voter,True,False,True,extrapolation,0.08,50,0.01,train,0.017509484,0.017509484,0.00050716101,5.8903717e-07
+burgers,only-voter,True,False,True,extrapolation,0.08,50,0.02,train,0.03153169,0.03153169,0.000475625,5.5240999e-07
+burgers,only-voter,True,False,True,extrapolation,0.08,50,0.03,train,0.04570542,0.04570542,0.00046654401,5.4186296e-07
+burgers,only-voter,True,False,True,extrapolation,0.08,50,0.015,interpolation,0.027515183,0.027515183,0.000478064,5.5524274e-07
+burgers,only-voter,True,False,True,extrapolation,0.08,50,0.08,extrapolation,7.1124326e-09,7.1124326e-09,0.00046445899,5.3944134e-07

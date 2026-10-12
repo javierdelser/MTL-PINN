@@ -1,0 +1,18 @@
+{
+  "pde": "lamb_chaplygin",
+  "mode": "only-voter",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": true,
+  "snapshot_split": "extrapolation",
+  "snapshot_mu": "1.6,1.4",
+  "seed": 50,
+  "peak_memory_mb": 112.0947265625,
+  "n_epochs": 20000,
+  "total_train_time_s": 1419.44376168298,
+  "time_per_epoch_s": 0.070972188084149,
+  "n_parameters": 72137,
+  "n_trainable_parameters": 4545,
+  "flops_per_forward": 1424384,
+  "output_dir": "outputs/hybrid/lamb_chaplygin/hybrid/extrap/only-voter/softmax/muvoter/seed50"
+}

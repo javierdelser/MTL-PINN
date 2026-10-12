@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+heat,only-voter,True,False,True,extrapolation,0.8,50,57.45166,20000,445.75493,0.022287747,71365,4417,1403904,outputs/hybrid/heat/hybrid/extrap/only-voter/softmax/muvoter/seed50

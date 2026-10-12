@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+burgers,one-phase,True,False,True,interpolation,0.015,50,81.696289,20000,644.26989,0.032213495,71365,71365,1403904,outputs/hybrid/burgers/hybrid/interp/one-phase/softmax/muvoter/seed50

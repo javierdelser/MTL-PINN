@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,snapshot_split,snapshot_mu,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+burgers,backbone-frozen-retrain-rest,True,False,True,extrapolation,0.08,50,62.396973,20000,525.61548,0.026280774,71365,4933,1403904,outputs/hybrid/burgers/hybrid/extrap/backbone-frozen-retrain-rest/softmax/muvoter/seed50
