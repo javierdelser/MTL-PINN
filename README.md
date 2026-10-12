@@ -38,7 +38,7 @@ The baseline is a fully connected tanh PINN of the same depth as the backbone. I
 Hybrid models start from the trained two-phase softmax checkpoint and add one numerical solution as an extra head, either at the interpolation query or at the extrapolation query. The numerical field has no weights. It is stored on a grid and read by multilinear interpolation. The loss is the physics loss at the four training parameters plus a data term of weight \(\gamma_s=10\) at the numerical head. That data term is applied only while the voter is being updated. Four retraining modes are stored:
 
 | Mode | What is trained |
-|------|-----------------|---------------------------|
+|------|-----------------|
 | `only-voter` | voter |
 | `backbone-frozen-retrain-rest` | heads and voter |
 | `one-phase` | backbone, heads, and voter |
