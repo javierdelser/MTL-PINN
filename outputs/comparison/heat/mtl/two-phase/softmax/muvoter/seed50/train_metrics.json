@@ -1,0 +1,16 @@
+{
+  "pde": "heat",
+  "mode": "two-phase",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": false,
+  "seed": 50,
+  "peak_memory_mb": 99.68115234375,
+  "n_epochs": 20000,
+  "total_train_time_s": 388.3315094826612,
+  "time_per_epoch_s": 0.01941657547413306,
+  "n_parameters": 71365,
+  "n_trainable_parameters": 4417,
+  "flops_per_forward": 1335296,
+  "output_dir": "outputs/comparison/heat/mtl/two-phase/softmax/muvoter/seed50"
+}

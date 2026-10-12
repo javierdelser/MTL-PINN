@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+heat,baseline,True,False,False,50,64.250488,20000,279.42198,0.013971099,70885,70885,1123584,outputs/comparison/heat/baseline/pinn/seed50
