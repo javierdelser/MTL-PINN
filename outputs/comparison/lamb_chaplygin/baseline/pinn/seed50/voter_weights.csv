@@ -1,0 +1,7 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,mu,split,t,has_voter
+lamb_chaplygin,baseline,True,False,False,50,"0.8,0.5",train,0.5,0
+lamb_chaplygin,baseline,True,False,False,50,"0.8,1",train,0.5,0
+lamb_chaplygin,baseline,True,False,False,50,"1.2,0.5",train,0.5,0
+lamb_chaplygin,baseline,True,False,False,50,"1.2,1",train,0.5,0
+lamb_chaplygin,baseline,True,False,False,50,"1,0.75",interpolation,0.5,0
+lamb_chaplygin,baseline,True,False,False,50,"1.6,1.4",extrapolation,0.5,0

@@ -1,0 +1,16 @@
+{
+  "pde": "lamb_chaplygin",
+  "mode": "baseline",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": false,
+  "seed": 50,
+  "peak_memory_mb": 163.6279296875,
+  "n_epochs": 20000,
+  "total_train_time_s": 1153.6362951282208,
+  "time_per_epoch_s": 0.05768181475641104,
+  "n_parameters": 72354,
+  "n_trainable_parameters": 72354,
+  "flops_per_forward": 1146992,
+  "output_dir": "outputs/comparison/lamb_chaplygin/baseline/pinn/seed50"
+}

@@ -1,0 +1,7 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,mu,split,mae_psi,mae_omega,mae_mean,test_time_per_query_s,test_time_per_point_s
+lamb_chaplygin,baseline,True,False,False,50,"0.8,0.5",train,0.010792012,0.01908849,0.014940251,0.000199561,1.1871565e-07
+lamb_chaplygin,baseline,True,False,False,50,"0.8,1",train,0.0192387,0.027727604,0.023483152,0.000246383,1.465693e-07
+lamb_chaplygin,baseline,True,False,False,50,"1.2,0.5",train,0.0051848785,0.015712427,0.010448653,0.000174206,1.0363236e-07
+lamb_chaplygin,baseline,True,False,False,50,"1.2,1",train,0.0082960368,0.020768672,0.014532354,0.000167223,9.9478286e-08
+lamb_chaplygin,baseline,True,False,False,50,"1,0.75",interpolation,0.042301211,0.052364185,0.047332698,0.000167126,9.9420585e-08
+lamb_chaplygin,baseline,True,False,False,50,"1.6,1.4",extrapolation,0.42356126,0.12861098,0.27608612,0.000167256,9.9497915e-08

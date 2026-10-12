@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,mean_test_time_per_point_s,n_eval_queries
+lamb_chaplygin,one-phase,True,False,False,50,1.5634236e-07,6

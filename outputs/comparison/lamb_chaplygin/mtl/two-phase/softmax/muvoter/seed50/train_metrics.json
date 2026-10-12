@@ -1,0 +1,16 @@
+{
+  "pde": "lamb_chaplygin",
+  "mode": "two-phase",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": false,
+  "seed": 50,
+  "peak_memory_mb": 267.77490234375,
+  "n_epochs": 20000,
+  "total_train_time_s": 1594.568476918008,
+  "time_per_epoch_s": 0.0797284238459004,
+  "n_parameters": 72137,
+  "n_trainable_parameters": 4545,
+  "flops_per_forward": 1353728,
+  "output_dir": "outputs/comparison/lamb_chaplygin/mtl/two-phase/softmax/muvoter/seed50"
+}
