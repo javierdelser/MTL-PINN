@@ -1,0 +1,7 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,mu,split,t,has_voter
+fisher_kpp,baseline,True,False,False,50,0.5,train,1.5,0
+fisher_kpp,baseline,True,False,False,50,1,train,1.5,0
+fisher_kpp,baseline,True,False,False,50,1.5,train,1.5,0
+fisher_kpp,baseline,True,False,False,50,2,train,1.5,0
+fisher_kpp,baseline,True,False,False,50,1.25,interpolation,1.5,0
+fisher_kpp,baseline,True,False,False,50,3.5,extrapolation,1.5,0

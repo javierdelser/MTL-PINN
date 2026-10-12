@@ -1,0 +1,16 @@
+{
+  "pde": "fisher_kpp",
+  "mode": "two-phase",
+  "softmax": false,
+  "time_conditioned_voter": false,
+  "hybrid": false,
+  "seed": 50,
+  "peak_memory_mb": 154.71533203125,
+  "n_epochs": 20000,
+  "total_train_time_s": 521.2365105703284,
+  "time_per_epoch_s": 0.02606182552851642,
+  "n_parameters": 71493,
+  "n_trainable_parameters": 4417,
+  "flops_per_forward": 1337344,
+  "output_dir": "outputs/comparison/fisher_kpp/mtl/two-phase/nosoftmax/muvoter/seed50"
+}

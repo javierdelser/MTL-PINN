@@ -1,0 +1,2 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,peak_memory_mb,n_epochs,total_train_time_s,time_per_epoch_s,n_parameters,n_trainable_parameters,flops_per_forward,output_dir
+fisher_kpp,two-phase,False,False,False,50,154.71533,20000,521.23651,0.026061826,71493,4417,1337344,outputs/comparison/fisher_kpp/mtl/two-phase/nosoftmax/muvoter/seed50

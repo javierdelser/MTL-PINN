@@ -1,0 +1,16 @@
+{
+  "pde": "fisher_kpp",
+  "mode": "baseline",
+  "softmax": true,
+  "time_conditioned_voter": false,
+  "hybrid": false,
+  "seed": 50,
+  "peak_memory_mb": 96.25048828125,
+  "n_epochs": 20000,
+  "total_train_time_s": 370.4343371531213,
+  "time_per_epoch_s": 0.018521716857656065,
+  "n_parameters": 71017,
+  "n_trainable_parameters": 71017,
+  "flops_per_forward": 1125696,
+  "output_dir": "outputs/comparison/fisher_kpp/baseline/pinn/seed50"
+}

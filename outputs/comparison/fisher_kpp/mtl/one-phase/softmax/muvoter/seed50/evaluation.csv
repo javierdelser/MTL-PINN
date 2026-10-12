@@ -1,0 +1,7 @@
+pde,mode,softmax,time_conditioned_voter,hybrid,seed,mu,split,mae_u,mae_mean,test_time_per_query_s,test_time_per_point_s
+fisher_kpp,one-phase,True,False,False,50,0.5,train,0.00015931721,0.00015931721,0.000351913,2.0934741e-07
+fisher_kpp,one-phase,True,False,False,50,1,train,0.00017975755,0.00017975755,0.000265026,1.5765973e-07
+fisher_kpp,one-phase,True,False,False,50,1.5,train,0.00037694873,0.00037694873,0.000260325,1.5486318e-07
+fisher_kpp,one-phase,True,False,False,50,2,train,0.00033159403,0.00033159403,0.000286777,1.7059905e-07
+fisher_kpp,one-phase,True,False,False,50,1.25,interpolation,0.0035895506,0.0035895506,0.000257098,1.5294349e-07
+fisher_kpp,one-phase,True,False,False,50,3.5,extrapolation,0.098377203,0.098377203,0.00025638501,1.5251934e-07
